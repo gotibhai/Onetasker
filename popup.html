@@ -6,11 +6,18 @@
  -->
 <html>
   <head>
+    <link rel="stylesheet" href="flipclock.css">
+    <script src="jquery.min.js"></script>
+    <script src="flipclock.min.js"></script>
     <title>Getting Started Extension's Popup</title>
     <style>
       body {
         font-family: "Segoe UI", "Lucida Grande", Tahoma, sans-serif;
         font-size: 100%;
+      }
+      p{
+        font-family: "Segoe UI", "Lucida Grande", Tahoma, sans-serif;
+        font-size: 20px;
       }
       #status {
         /* avoid an excessively wide status text */
@@ -18,6 +25,16 @@
         text-overflow: ellipsis;
         overflow: hidden;
         max-width: 400px;
+        margin: 10px;
+      }
+
+      #container {
+        height: 500px;
+        width: 500px;
+      }
+
+      .your-clock{
+        height: 50px;
       }
     </style>
 
@@ -30,9 +47,21 @@
     <script src="popup.js"></script>
   </head>
   <body>
-    <div id="status"></div>
-    <h1> Welcome OneTasker! </h1>
-    <img id="image-result" hidden>
+    
+
+    <div id="container">
+      
+        <div id="status"> <h2> Welcome to OneTasker! </h2></div>
+        <div id="text">
+          <p> Muck Fultitasking! <p>
+        </div>
+
+        <h3>Time Remaining : </h3>
+
+         <div class="clock"></div>
+
+    </div>
+   
   </body>
 </html>
 
