@@ -13,5 +13,9 @@
     "activeTab",
     "https://ajax.googleapis.com/",
     "tabs"
-  ]
+  ],
+  "background": {
+    "scripts": ["eventPage.js"],
+    "persistent": false
+  }
 }

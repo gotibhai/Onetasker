@@ -60,6 +60,8 @@ function renderStatus(statusText) {
 
 document.addEventListener('DOMContentLoaded', function() {
   getTabsOpenned(function(tabs) {
+
+    console.log(tabs)
     // Put the image URL in Google search.
     // renderStatus('Performing Google Image search for ' + url);
 
