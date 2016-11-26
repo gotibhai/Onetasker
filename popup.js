@@ -53,26 +53,39 @@ function renderStatus(statusText) {
 }
 
 document.addEventListener('DOMContentLoaded', function() {
-  var bkg = chrome.runtime.getBackgroundPage();
-
-  var clock = document.getElementById('clock').FlipClock(bkg.time , {
+  var bkg = chrome.extension.getBackgroundPage();
+  var clock = $('.clock').FlipClock(bkg.wholeTime-bkg.getTime() , {
       clockFace: 'MinuteCounter',
-      countdown: true,
-      // The onStop callback
-      onStop: function() {
-        isOn = false;
-        chrome.tabs.create(function() {
-          isOn = true;
-        });
+      countdown: true
+      //,
+      // // The onStop callback
+      // onStop: function() {
+      //   alert("Timer stopped!")
+      //   bkg.isOn = false;
+      //   chrome.tabs.create(function() {
+      //     bkg.isOn = true;
+      //   });
 
-        console.log("Timer stopped!")
-      },
+      // },
 
-      // The onReset callback
-      onReset: function() {
+      // // The onReset callback
+      // onReset: function() {
        
-      }
-});
+      // }
+  });
+  if(bkg.getTime() === 1500) {
+    //alert("niggas in paris");
+     bkg.isOn = true;
+     bkg.wholeTime = 300;
+     bkg.initialTime = new Date();
+      chrome.tabs.create({}, function() {
+        // bkg.isOn = false;
+      });
+  } else if(bkg.getTime() === 300) {
+      bkg.wholeTime = 1500;
+      bkg.initialTime = new Date();
+      bkg.isOn = false;
+  }
    
   getTabsOpenned(function(tabs) {
     console.log(tabs)
