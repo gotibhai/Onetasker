@@ -11,9 +11,13 @@
     <script src="flipclock.min.js"></script>
     <title>Getting Started Extension's Popup</title>
     <style>
+
+      *:focus {outline:0;}
+
       body {
         font-family: "Segoe UI", "Lucida Grande", Tahoma, sans-serif;
         font-size: 100%;
+        background-color: #000;
       }
       p{
         font-family: "Segoe UI", "Lucida Grande", Tahoma, sans-serif;
@@ -29,12 +33,15 @@
       }
 
       #container {
-        height: 500px;
-        width: 500px;
+        height: 120px;
+        width: 335px;
+        padding-top: 20px;
+        padding-bottom:20px;
       }
 
-      .your-clock{
+      .clock{
         height: 50px;
+        margin: 20px;
       }
     </style>
 
@@ -50,14 +57,6 @@
     
 
     <div id="container">
-      
-        <div id="status"> <h2> Welcome to OneTasker! </h2></div>
-        <div id="text">
-          <p> Muck Fultitasking! <p>
-        </div>
-
-        <h3>Time Remaining : </h3>
-
          <div class="clock"></div>
 
     </div>
